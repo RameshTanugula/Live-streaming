@@ -1,0 +1,18 @@
+<!-- <p>user works!</p> -->
+<div>
+<!-- <div width="70%" class="event-info"><p>event details will display here</p></div> -->
+<div style="padding-top:10%;">
+<img width="70%" class="banner"  [src]="banner" />
+</div>
+<div *ngIf="videoId" >
+    <app-corp-video-player [videoId]="videoId" ></app-corp-video-player>
+</div>
+<div>
+    <carousel>
+        <div *ngFor="let img of imageUrl" class="carousel-cell">
+            <img [src]="img">
+        </div>
+        
+    </carousel>
+</div>
+</div>

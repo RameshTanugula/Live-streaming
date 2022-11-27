@@ -1,0 +1,40 @@
+<div style="padding-top:10% ;">
+  <label for="name">Live Video Id: </label>
+  <input id="name" type="text" [(ngModel)]="video_id">
+  <button (click)="onUpdateVideoId()" class="btn btn-success">
+    Update
+  </button>
+  <br />
+  <label for="banner">Banner: </label>
+  <!-- <input id="banner" type="file" formControlName="banner"> -->
+  <br />
+  <div class="text-center">
+    <input class="form-control" type="file" formControlName="banner" (change)="onChange($event)">
+    <img [src]="image" />
+    <button (click)="onUpload()" class="btn btn-success">
+      Upload
+    </button>
+  </div>
+  <label for="slider">Slider photos: </label>
+  <!-- <input id="banner" type="file" formControlName="banner"> -->
+  <br />
+  <div class="text-center">
+    <input class="form-control" multiple type="file" formControlName="banner" (change)="onChangeMultiple($event)">
+
+    <button (click)="onUploadMultiple()" class="btn btn-success">
+      Upload
+    </button>
+  </div>
+  <!-- Shareable short link of uploaded file -->
+  <div class="container text-center jumbotron" *ngIf="shortLink">
+    <h2> Visit Here</h2>
+    <a href="{{shortLink}}">{{shortLink}}</a>
+  </div>
+
+  <!--Flag variable is used here-->
+  <div class="container" *ngIf="loading">
+    <h3>Loading ...</h3>
+  </div>
+</div>
+<!-- <img src=""> -->
+<!-- <img src="//rf.revolvermaps.com/0/0/6.js?i=5josni7mlbl&amp;m=7&amp;c=e63100&amp;cr1=ffffff&amp;f=arial&amp;l=0&amp;bv=90&amp;lx=-420&amp;ly=420&amp;hi=20&amp;he=7&amp;hc=a8ddff&amp;rs=80" /> -->
